@@ -1,0 +1,77 @@
+baseurl = "http://jasonscarano.com"
+languageCode = "en-us"
+title = "Jason Scarano's Blog"
+author = "Jason Scarano"
+copyright = "Copyright (c) 2008 - 2020, Jason Scarano; all rights reserved."
+canonifyurls = true
+paginate = 3
+theme = "hugo-bootstrap"
+
+disqusShortname = "xxxxxx"
+googleAnalytics = "UA-XXXXXXX-1"
+
+[[menu.main]]
+    name = "TAGS"
+    pre = "<i class='fa fa-tags'></i>"
+    weight = -110
+    identifier = "tags"
+    url = "/tags/"
+
+[[menu.main]]
+    name = "CATEGORIES"
+    pre = "<i class='fa fa-folder-open'></i>"
+    weight = -100
+    identifier = "categories"
+    url = "/categories/"
+
+[[menu.main]]
+    name = "ABOUT ME"
+    pre = "<i class='fa fa-info-circle'></i>"
+    weight = -90
+    identifier = "about-me"
+    url = "/about"
+
+
+# You can have link at the footer as below
+# [[menu.footer]]
+#     name = "DISCLAIMER"
+#     weight = -110
+#     identifier = "disclaimer"
+#     url = "/page/disclaimer/"
+# 
+# [[menu.footer]]
+#     name = "LICENSE"
+#     weight = -120
+#     identifier = "license"
+#     url = "/page/license/"
+#
+[build]
+publish = "public"
+command = "hugo --gc --minify"
+
+[context.production.environment]
+HUGO_VERSION = "0.64.1"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
+
+[context.split1]
+command = "hugo --gc --minify --enableGitInfo"
+
+[context.split1.environment]
+HUGO_VERSION = "0.64.1"
+HUGO_ENV = "production"
+
+[context.deploy-preview]
+command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+
+[context.deploy-preview.environment]
+HUGO_VERSION = "0.64.1"
+
+[context.branch-deploy]
+command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy.environment]
+HUGO_VERSION = "0.64.1-C327E75D"
+
+[context.next.environment]
+HUGO_ENABLEGITINFO = "true"

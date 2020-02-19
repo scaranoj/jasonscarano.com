@@ -1,0 +1,4 @@
+baseURL = "http://jasonscarano.com/"
+languageCode = "en-us"
+title = "Jason Scarano's Site"
+theme = "hugo-bootstrap"
